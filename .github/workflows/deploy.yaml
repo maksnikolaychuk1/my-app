@@ -15,4 +15,4 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # Для Next.js це зазвичай 'out'
+          folder: out
