@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: 'latest' 
           cache: 'npm'
-          cache-dependency-path: 'my-app/package-lock.json'
+          cache-dependency-path: './my-app/package-lock.json'
 
       - name: Install dependencies
         run: npm ci
@@ -35,6 +35,15 @@ jobs:
 
       - name: Run Unit Tests
         run: npm run test
+
+      - name: Build Next.js app
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # This points exactly where Next.js 'export' puts the files
+          path: ./my-app/out
 
   build-and-publish:
     needs: quality-checks

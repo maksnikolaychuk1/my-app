@@ -1,5 +1,9 @@
-/** @type {import('next').NextConfig} */
+import type {NextConfig} from "next"
+
 const nextConfig = {
-  output: 'standalone',
+  output: 'export', 
+  images: {
+    unoptimized: true, // Required: GitHub Pages doesn't support Next.js Image Optimization API
+  },
 }
 module.exports = nextConfig
