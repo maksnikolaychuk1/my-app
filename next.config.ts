@@ -1,9 +1,9 @@
-import type { NextConfig } from "next";
+import type {NextConfig} from "next"
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
-  output: "export",
-};
-
-export default nextConfig;
+const nextConfig = {
+  output: 'export', 
+  images: {
+    unoptimized: true, // Required: GitHub Pages doesn't support Next.js Image Optimization API
+  },
+}
+module.exports = nextConfig
