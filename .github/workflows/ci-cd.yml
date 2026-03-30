@@ -9,7 +9,7 @@ on:
 permissions:
   contents: read
   packages: write
-
+  
 jobs:
   quality-checks:
     runs-on: ubuntu-latest
