@@ -9,7 +9,7 @@ FROM node:24-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN npm run build && npm run export
+RUN npm run build
 
 # Stage 3: Фінальний статичний образ для запуску
 FROM nginx:alpine AS runner
